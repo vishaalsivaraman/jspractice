@@ -10,7 +10,6 @@ Sure, here's a clean and professional description for your **"js-practice"** rep
 
 ---
 
-### Optional Extended Version (for README or GitHub bio):
 
 > This repository contains my JavaScript learning journey through various practice problems, code snippets, and small projects. It includes topics like:
 >
