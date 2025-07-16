@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color: green;">My javascript learning</h1>
+     <h4>open console to see output</h4>
+
+    <script>
+        names=["vishaal","hareesh","joes","mark zuckerberg"];
+        for(var i=0;i<names.length;i++){
+            console.log(names[i]);
+        }
+        console.table(names);
+        //for of loop:
+        for(let name of names){
+            console.log(name);
+        }
+        //for in loop:
+        //for accessing a property in an object
+        let person={
+            "name":"vishaal",
+            "age":20,
+            "city":"bangalore",
+            "height":170
+        }
+        for(let value in person){
+            console.log(value);
+            console.log(value+" : "+person[value]);
+        }
+        //array converting object to array:
+        let personkeys=Object.keys(person);
+        console.log(personkeys);
+        let personval=Object.values(person);
+        console.log(personval);
+        //for of and for in loop testing:
+        fname=["name1","name2","name3","name4"];
+        for(let n of fname){
+            console.log(n);
+        }
+        details={
+            "name":"mr vishaal",
+            "age":20,
+            "college":"college of engineering guindy"
+        }
+        for(let det in details){
+
+            console.log(det+" : "+details[det]);
+        }
+        //accessing keys:
+        let keys=Object.keys(details);
+        console.log(keys);
+        let values=Object.values(details);
+        console.log(values);
+        for(let i=0;i<keys.length;i++){
+            console.log(keys[i]+" : "+values[i]);
+        }
+        let groups=[["hari","prasath","qplibrary","jsonsfile"],
+        ["sanj","prasath","qplibrary","jsonsfile"],
+        ["hari","prasath","qplibrary","jsonsfile"]]
+        for(group of groups){
+            for(member of group){
+                console.log(member);
+            membername:
+            swth=member.startsWith('p');
+            console.log(swth);
+        }} 
+        //Math functions in js
+        let num=Math.sqrt(10);
+        num=Math.ceil(12.6);
+        num=Math.floor(12.3);
+        num=Math.abs(-20);
+        num=Math.sign(-30);
+        let randomnum=Math.floor(Math.random()*50+1);
+        console.log(randomnum);
+        //string methods
+        let strv="hello";
+        let second="world";
+        let newvalue= strv.concat(second);
+        console.log(strv);
+        console.log(newvalue);
+        let strval="\"she cant run\"";
+        console.log(strval);
+        leng=strval.length;
+        console.log(leng);
+        let strv_1="helloh";
+        let upp=strv_1.toUpperCase();
+        let loww=strv_1.toLowerCase();
+        console.log(upp);
+        console.log(loww);
+        ind=strv_1.indexOf('h');
+        console.log(ind);
+        las=strv_1.lastIndexOf('h');
+        console.log(las);
+        //substring
+        let strv_2="hello world";
+        let subs=strv_2.substr(0,5);
+        console.log(subs);
+        let subss=strv_2.substring(0,3);
+        console.log(subss);
+        //slicing
+        let text="1234567789";
+        let sliced=text.slice(2,4);
+        console.log("This is the correct method:"+sliced);
+        let slice_1=text.slice(4,1);
+        console.log("ipdi panna work agathu:"+slice_1);
+        //negative indexing using substring
+        let teststr="string functions in javascript";
+        let subsss=teststr.substring(-5);
+        console.log(subsss);
+        //split function:
+        let stringval="testing the split function and mapping it to variables in js"
+        let splited=stringval.split(" ");
+        let store=["a","b","c","d","e","f","g","h","i","j","k","l"]
+        console.table(splited);
+        for(let i=0;i<splited.length;i++){
+            
+            let newval=store[i]=splited[i];
+            console.log(newval);
+       
+        }
+        //-------------------------------------------------
+        //function with arbitrary arguments
+        function fun_with_arbit(){
+            let sum=0
+            for(i=0;i<arguments.length;i++){
+                sum+=arguments[i];
+            }
+            return sum;
+        }
+        console.log("function with arbitrary arguments:",+fun_with_arbit(2,4,5))
+        //writing function as expression
+        let divide=function(a,b){
+            return a/b;
+        }
+        console.log("division of two values:",divide(12,6));
+        //arrow function in ES6
+        let add=(a,b)=>{
+            return a+b;
+        }
+        console.log(add(20,30));
+        //arrow function with map()
+        let nums=[1,2,3,4,5];
+        let doublednums=nums.map(nums=>nums*2);
+        console.log(doublednums)
+        //arrow using filter()
+        let fruits=["apple","orange","avocado","blackberry","pine apple"];
+        let filtered=fruits.filter(fruits=>fruits.length>6);
+        console.log(filtered);
+        //arbitrary function for revision purpose
+        let arb =function(){
+            let sum=0;
+            for(i=0;i<arguments.length;i++){
+                sum+=arguments[i];
+            }
+            return sum;
+        }
+        console.log("sum of given values is:",arb(20,22,30));
+        let newfunc = function(...spreader){
+            let total=0;
+            for(let i=0;i<spreader.length;i++){
+                total+=spreader[i];
+            }
+            return total;
+
+        }
+        console.log("i am spreader function:",newfunc(20,30,20,40,50));
+        // map and filter function for revision purpose
+        let valuess= ["apple","rajesh","avocado","annotation","vishaal",'hareesh']
+        let filteredd=valuess.filter(valuess=> valuess.startsWith('a'));
+        console.log(filteredd); 
+        //mapped
+        let newval=[1,2,3,4,5,6];
+        let mappedval=newval.map(newvalue=>newvalue*2);
+        console.log(mappedval);
+        //higher order or call back function
+        function lowerorder(){
+          return("i am from lowerorder function!")
+        }
+        function higherorder(lowerorder){
+           return lowerorder();
+
+        }
+        console.log(higherorder(lowerorder));
+        //function level block in js
+        function newfuncs(){
+           let teststring="testing inside the block;"
+           console.log("i am outer function!");
+            function innerfunc(){
+                console.log(teststring);
+            }
+            innerfunc();
+        }
+        newfuncs();
+        //arrays
+        // let arrays=[]
+        // let newvalues=prompt("Enter the number of values to be inserted:");
+        // newvalues=parseInt(newvalues);
+        // for(let start=0;start<newvalues;start++){
+        //     vals=prompt("Enter the values to be inserted in the array:");
+        //     vals=parseInt(vals);
+        //     arrays.push(vals);
+        // }
+        // console.log(arrays);
+        //.length method is only used for arrays dont use it for just numbers
+        //constructing arrays using new keyword
+        let newarr= new Array("String","integer","float",10,20.1,true,false,{"object1":10,"object2":20,"object3":30});
+        console.log(newarr);
+        console.table(newarr);
+        //same for practice
+        let pudhuarray= new Array("tesging sample",1,2,3,4);
+        console.log(pudhuarray);
+        //lowr and highr order function example for revision purpose
+        function lowerord(){
+            console.log("i am lower order function!")//lower order function
+        }
+        function higherord(lowerord){
+            lowerord()
+        }
+        higherord(lowerord);//this is higher order function and also known as callback and parameter function;
+        //array methods
+        let c=new Array(2,3,4,5,6);
+        c.forEach((value,i)=>{
+            console.log("index value: "+i,"actual value: "+value);
+        });
+        //foreach without arrow function
+        let d= new Array(10,20,23,24,59);
+        d.forEach(function(fname){
+            console.log(fname)
+        })
+        //witharrow
+        let f=new Array("vishaal","BCA","@gnc","fullstack developer");
+        f.forEach((arrvals)=>{
+            console.log(arrvals);
+        })
+        //with objects
+        let e=new Array({"name":"vishaal","course":"BCA",Collegename:"@gnc",Profession:"fullstack developer"});
+        e.forEach((arrvals)=>{
+            console.log(arrvals.course);
+            console.log(arrvals.name);
+        })
+        //for practice foreach
+        let fruites=["apple","chillies","oranges"]
+        fruites.forEach(function fruit(fruitts){
+            console.log(fruitts);
+        })
+        fruites.forEach(fruit=>console.log(fruit));
+        //spreader function for revision purpose        
+
+        function total(...args){
+            let sum=0
+            for(let j=0;j<args.length;j++){
+                sum=sum+args[j];
+            }
+            return sum
+        }
+        
+        console.log("Total values of given elements is: "+total(10,220,30));
+
+        //doubling a number and storing it into a new array using foreach
+        let numss= new Array(1,2,3,4,5,6)
+        let doublednumss=[]
+        numss.forEach(value=>{
+        doublednumss.push(value*2);
+        console.log(doublednumss);})
+        console.log(doublednumss)
+        //checking maximum number from the array
+     let valss= new Array(2,3,4,5);
+     let totalvalue=0;
+     valss.forEach((sumvals)=>{
+        totalvalue+=sumvals
+     })
+     console.log(totalvalue);
+     console.log(Math.max(...valss))
+     //finding even and odd number
+     num=[23,22,42,2,2,2,44,6];
+     let even=[]
+     let odd=[]
+     let totaleven=0
+     num.forEach(number=>{
+        if(number%2==0){
+            even.push(number)
+            totaleven+=1
+        }else{
+            odd.push(number)
+        }
+     })
+     console.log("Even numbers: ",even);
+     console.log("odd numbers: ",odd);
+     console.log("Total even numbers: ",totaleven);
+     //changing names to capital letters
+    let summanames= new Array("alice","john","mike","joseph");
+    console.log(summanames)
+    summanames.forEach((peru,indvalue)=>{
+        // summanames[indvalue]=peru(charAt(0).toUpperCase());
+    });
+    console.log(summanames)
+    //finding squares using map()
+    let normalarr=[2,3,4,5,6];
+    let sqrarr=[];
+    normalarr.map(number=>{
+        sqrarr.push(number*number);
+    });
+    console.log(sqrarr);
+    //findingsquareroot
+    let squarerootval=[]
+    normalarr=[2,3,4,5,6];
+    normalarr.map(sqvalue=>{
+        squarerootval.push(Math.sqrt(sqvalue))
+    });
+    console.log(squarerootval);
+    //map function operation
+    let detailsss=[
+        {name:"john",age:20,district:"chennai"},
+        {name:"alex",age:22,district:"los angels"},
+        {name:"deeraj",age:10,district:"las vegas"},
+        {name:"arun",age:12,district:"trichy"},
+        {name:"soundar",age:21,district:"tanjore"}]
+    console.table(detailsss);
+let eligible=detailsss.map(value=>({
+   name:value.name,
+   age:value.age,
+   district:value.age,
+   status:value.age>18?'eligible':"not eligible" 
+   //we can use spread operator instead of above approach
+   //...value
+}));
+console.table(eligible);
+//foreach practice
+let forrr= new Array(10,2,20,30)
+console.log("type of array is: "+typeof(forrr))
+forrr.forEach(inrvalue=>{
+    inrvalue*=85;
+    console.log(inrvalue);
+})
+forrr.forEach(inrvalue=function(inrvalue,i){
+    console.log("index value: "+i+" amount value: " +inrvalue);
+})
+//map practice
+console.log("map return------------------------------")
+let summa= new Array(10,20.4,203,12);
+let mapreturn=summa.map(testing=function(dollarvalues,index){
+    dollarvalues*=85
+    return converted=dollarvalues.toFixed(2)
+    console.log("index value: "+index+" amount value: "+converted);
+})
+console.log("calling outside foreach: ")
+console.log(mapreturn)
+//mapusing function
+let mapiing= new Array(45,254,52,1,6,5,7,97)
+let mapped=mapiing.map(objects)
+function objects(val){
+    return val*85
+}
+console.log(mapped)
+//approach with arrow function
+mapped=mapiing.map(objects=>{
+    return objects*85
+
+})
+ mapiing= new Array(45,254,52,1,6,5,7,97)
+ mapped=mapiing.map(objects)
+function objects(val){
+    return val*85
+}
+console.log(mapped)
+//approach with arrow function
+mapped=mapiing.map(objects=>{
+    return objects*85
+})
+console.log(mapped)
+//using filter to find even numbers from a array
+let B= new Array(10,11,20,22,21,25)
+let evenn=B.filter(number=>number%2==0)
+let oddd=B.filter(number=>number%2 !=0)
+console.log("odd or even using filter()")
+console.log(B)
+console.log(evenn)
+console.log(oddd)
+//counting alphabets in array using reduce()
+// let alpha= new Array("a","b","c","d","e","c","f","d")
+// let countts=alpha.reduce((accumulator,el)=>{
+//     if(accumulator[el]){
+//         accumulator[el]++
+//     }
+//     else{
+//         accumulator[el]=1
+//     }
+// })
+// console.log(countts)
+//filter
+let fil=[{
+    "vegetable":"onion","fruit":"banana"},
+    {"vegetable":"brinjal","fruit":"apple"},
+    {"vegetable":"tomato","fruit":"apple"}]
+let mapedfil=fil.filter(values=>values.fruit=="apple"?"yes":"no")
+console.log(mapedfil)
+let words = ['cat', 'dog', 'elephant', 'fish',
+'giraffe','erumai'];
+let wordswithe=words.filter(words=>words.startsWith('e'))
+console.log(wordswithe);
+//compressing multiple arrays into onearray
+let multiplearr=[[1,2],[3,4],[5,6]]
+let compressed=multiplearr.flat()
+//using reduce for same purpose
+compressed=multiplearr.reduce((accumulator,currentvalue)=>{
+    return accumulator.concat(currentvalue)
+})
+console.log(compressed)
+let colors = ['red', 'blue', 'green', 'red', 'blue', 'yellow'];
+let colorcount=colors.reduce((accumulator,currentvalue)=>{
+    if(currentvalue in accumulator){
+        accumulator[currentvalue]++
+    }
+    else{
+        accumulator[currentvalue]=1
+    }
+    return accumulator
+},{})
+console.log(colorcount)
+//practicing reduce with array of objects
+let people = [
+{ name: 'Rakesh', age: 25, city: 'Chennai' },
+{name: 'Raj', age: 30, city: 'Salem' },
+{name: 'Sara', age: 35, city: 'Chennai' },
+{name: 'Sanjai', age: 35, city: 'tirunnelveli' },
+{name: 'Saravanan', age: 35, city: 'tiruchendur' },
+{name: 'murugan', age: 35, city: 'kaniyakumari' }
+];
+let alreadycities=people.reduce((accumulator,currentvalue)=>{
+    if(currentvalue.city in accumulator){
+        accumulator[currentvalue.city].push(currentvalue)
+    }
+    else{
+        accumulator[currentvalue.city]=[currentvalue];
+    }
+    return accumulator
+});
+console.log(alreadycities)
+//slice and splice in js
+const arrrrr=[12,13,12,11,31]
+let slicedd=arrrrr.slice(2,4)
+console.log(slicedd)
+//splicing
+arrrrr.splice(2,4)
+console.log(arrrrr)  
+//concat
+const aa=[1,2,3,4,5]
+const bb=[6,7,8,9] 
+const cc=[11,22,33,55]
+try{
+let dd=a.concat(bb,cc,44,55,66)
+}
+catch(err){
+    console.log("concatenation failed because a is not defined ")
+}
+finally{
+    let dd=aa.concat(bb,cc);
+    console.log(dd)
+}
+//sorting
+const const_num=[10,100,25,150,45,80,9];
+console.log("Before Sort : "+const_num);
+let sorted=const_num.sort((num_1,num_2)=>{
+    return num_1-num_2
+})
+console.log(sorted)
+//bubble sort
+const bubbleSort = (arr) => {
+const n=arr.length;
+for (let i = 0; i < n; i++) { // n
+     for (j = 0; j < n - i - 1; j++) { //-n/2
+           if (arr[j] > arr[j + 1]) {
+             [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                         }
+                      }
+                  }
+return arr; 
+};
+console.log("i am bubble sort: "+bubbleSort(const_num))
+//12/04/25
+//object clone
+const a_1={a:1,b:2,c:3}
+const a_2={d:4,e:5,f:6}
+const a_3=Object.assign({},a_1,a_2)
+console.log("i am cloned: ",a_3)
+//approach 2
+let a_4={...a_1,...a_2}
+console.log("I am spread operator",a_4)
+//array clone
+let ar_1=[1,2,3,4,5]
+let new_arr=[...ar_1]
+let new_arr1=ar_1.slice()
+console.log(new_arr)
+console.log(new_arr1)
+let cloned_ar=Array.from(ar_1)
+console.log("i am cloned using methods: ",cloned_ar)
+//stringify will convert the array into string and JSON.parse will convert it into integer values
+let stringi=JSON.parse(JSON.stringify(ar_1))
+console.log(stringi)
+//13/4
+//ways to create object
+let usedetails=[
+    {name:"Rahul",
+    age:25,
+    address:{no:9/309,street:"rajeswari nagar",area:"pozhichalur"}},
+    {name:"vishaal",
+    age:25,
+    address:{no:9/309,street:"rajeswari nagar",area:"pozhichalur"}},
+    {name:"jaison",
+    age:25,
+    address:{no:9/309,street:"rajeswari nagar",area:"pozhichalur"}},
+    {name:"johndoe",
+    age:25,
+    address:{no:9/309,street:"rajeswari nagar",area:"pozhichalur"}}
+]
+// let entername=prompt('Enter name to search for details: ')
+// entername=entername.toLowerCase()
+// let result=usedetails.find(value=>{
+//     return value.name.toLowerCase()==entername
+// })
+// if(result){
+//     console.log("user found!")
+//     console.log(result)
+// }
+// else{
+//     console.log("user not found!")
+// }
+//creating object using function
+function createobj(name,age,city){
+    const obj_1={}
+    obj_1.name=name
+    obj_1.age=age
+    obj_1.city=city
+    obj_1.about=function(){
+        return `${this.name} is from ${this.city} and he is ${this.age} years old`
+    }
+    return obj_1
+}
+let detais=createobj('vishaal',21,'chennai')
+console.log(detais.obj_1)
+console.log(detais.about())
+//object chaininig in js
+let useer_details={
+    Userid:'45',
+    account:{
+        account_number:'win2345',
+        holder:{
+            profile:{
+                firstname:'vishaal',
+                secondname:'S',
+                country:'India',
+                birthdate:'17-03-2005'
+             }
+
+        },
+        contact:{
+            phone:{
+                mob:'123456789',
+            mail:'vishaal@gmail.com'
+        },address:{
+            pincode:'600074',
+            street:'rajeswari nagar',
+            area:'pozhichalur',
+            city:'chennai'
+        }}
+    }
+
+}
+console.log(useer_details)
+console.log(useer_details.account.account_number)
+
+//console.log(useer_details.account.contact.addresss?.pincode)
+//above will result undefined because i have declared object name as  'address' but i am checking it as 'adresss'
+
+//correct example of optional chaining
+console.log(useer_details.account?.contact?.address?.pincode)
+key='tirunelveli'
+let nnewval=useer_details.account.contact.address.city=key
+console.log(nnewval)
+console.log(useer_details)
+let dob=useer_details.account.holder.profile.birthdate
+let nod= new Date()
+
+//object destructuring
+obj_des={name:'vishaal',age:20,city:'tirunelveli'}
+let {name,age,city}=obj_des
+console.log(city)
+//array destructuring
+let arr_1=[1,2,3,4]
+let [a,b,C,dd,E=5]=arr_1
+console.log('i am destructured from array',E)
+//swapping values
+/*
+let aaa=10
+let bbb=20
+console.log('values before swapping: ')
+console.log(aaa)
+console.log(bbb)
+[aaa,bbb]=[bbb,aaa]
+
+console.log('values after swapping: ')
+console.log(aaa)
+console.log(bbb)*/
+// Destructuring multidimensional array
+
+let array_values2=[1,2,[3,4,[5,6]]]
+let [AA,BB,[CC,DD,[EE,FF]]]=array_values2
+console.log(BB)
+
+
+                                                                    
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
